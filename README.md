@@ -1,4 +1,4 @@
-# Portland, Oregon Crime Rate Data 
+# Portland, Oregon Crime Rate Analysis from 2017 to 2022
 ![Photo by <a href="https://unsplash.com/@shenny_visuals?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Justin Shen</a> on <a href="https://unsplash.com/photos/k0VeQ6sXHGg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   ](data/justin-shen-k0VeQ6sXHGg-unsplash.jpg)
 The primary aim of the project is to analyze data and derive insights into the trends of crime rates in Portland, Oregon between 2017 and 2022. This analysis will be valuable for law enforcement to identify areas requiring enhanced patrolling and increased safety funding, as well as for the general public's awareness.
