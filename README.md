@@ -34,6 +34,10 @@ The primary aim of the project is to analyze data and derive insights into the t
 
 ## Data Cleaning and Processing 
 
+### Data Cleaning CSV files for Analysis: 
+* [Datafile Crime](<data/updated-Datafile-Crime (Cleaned Final).zip>)
+* [Portland Oregon Crime 2019 till 2023](<data/updated-portland-oregon-crime-2019 till 2023(Cleaned).zip>)
+
 ## FLASK 
 
 ## Data Analysis 
