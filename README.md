@@ -23,9 +23,14 @@ The primary aim of the project is to analyze data and derive insights into the t
 * Plotly
 
 ## Dataset used:
-* [Portland Crime Data 2015-2022](https://www.kaggle.com/datasets/sozinizos/portland-crime-data-20152022) 
-* CSV File found here: [Portland Crime Data 2015-2022](data/pdx_crime_2015_2022.csv)
-* Found in [Portland's Open Data Portal](https://www.portland.gov/police/open-data/crime-statistics)
+* [Monthly Portland Neighborhood Offense Statistics by Portland Police Bureau from 2019 to 2023](https://public.tableau.com/app/profile/portlandpolicebureau/viz/New_Monthly_Neighborhood/MonthlyOffenseTotals) 
+
+ ### CSV File found here: 
+ * [Crime Data 2019](data/CrimeData-2019.csv)
+ * [Crime Data 2020](data/CrimeData-2020.csv)
+ * [Crime Data 2021](data/CrimeData-2021.csv)
+ * [Crime Data 2022](data/CrimeData-2022.csv)
+ * [Crime Data 2023](data/CrimeData-2023.csv)
 
 ## Data Cleaning and Processing 
 
