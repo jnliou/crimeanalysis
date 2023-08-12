@@ -25,6 +25,7 @@ The primary aim of the project is to analyze data and derive insights into the t
 ## Dataset used:
 * [Portland Crime Data 2015-2022](https://www.kaggle.com/datasets/sozinizos/portland-crime-data-20152022) 
 * CSV File found here: [Portland Crime Data 2015-2022](data/pdx_crime_2015_2022.csv)
+* Found in [Portland's Open Data Portal](https://www.portland.gov/police/open-data/crime-statistics)
 
 ## Data Cleaning and Processing 
 
