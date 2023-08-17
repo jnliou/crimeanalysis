@@ -2,7 +2,6 @@
 
 let mapurl = "http://127.0.0.1:5000/map"
 let pieurl = "http://127.0.0.1:5000/pie"
-
   
 //perform a get request and load using d3
 
