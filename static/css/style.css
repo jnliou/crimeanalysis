@@ -26,3 +26,65 @@ html {
   margin-right: 8px;
   opacity: 0.7;
 }
+
+/* Pivot table formatting */
+.select-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.select-container label {
+  margin-right: 40px;
+}
+
+.pivot-table-container {
+  display: flex;
+  align-items: flex-end; /* Align vertically at the bottom */
+  justify-content: flex-start; /* Align horizontally at the left */
+  margin-top: 10px; /* Add a little spacing to separate from the charts */
+}
+
+#pivot-table-dropdown {
+  margin-right: 20px; /* Add spacing between dropdown and pivot table */
+}
+
+.pivot-table {
+  border-collapse: collapse;
+  width: 70%; /* Adjust the width as needed */
+}
+
+.pivot-table th,
+.pivot-table td {
+  border: 2px solid teal;
+  padding: 10px;
+  text-align: center;
+}
+
+.pivot-table-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Adjust spacing as needed */
+}
+
+.pivot-table-header label {
+  margin-right: 10px; /* Add spacing between label and dropdown */
+}
+
+/* Modifying code to ensure pivot table and pie chart are aligned */
+.charts-container {
+  display: flex; /* Use flexbox to align the elements horizontally */
+  align-items: flex-start; /* Align elements at the top */
+  justify-content: space-between; /* Create space between the elements */
+  width: 100%; /* Ensure the container occupies the full width */
+}
+
+#chart {
+  flex: 1;
+  width: 55%; /* Adjust the width of the pie chart */
+  padding-left: 50px; /* Add padding to the left side of the chart */
+}
+
+.pivot-table-container {
+  width: 48%; /* Adjust the width of the pivot table container */
+}
