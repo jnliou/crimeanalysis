@@ -52,8 +52,8 @@ def line_chart():
     for record in result:
         data_dict = {
             'year': record[0],
-            'neighbourhood': record[1],
-            'category': record[2],
+            'category': record[1],
+            'crimeagainst': record[2],
             'total_offense': record[3],
         }
         data_list.append(data_dict)
