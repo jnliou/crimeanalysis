@@ -36,11 +36,11 @@ The primary aim of the project is to analyze data and derive insights into the t
 ## Data Cleaning and Processing 
 
 ### Data Cleaning CSV files for Analysis: 
-* [CSV Files for Queried Data from 2019 to 2023]
+* [CSV file used for analysis](<data/updated-Datafile-Crime3 (Final).zip>)
 
 * The crime data obtained from the Portland Police Bureau frm 2019 to 2023 was merged and cleaned on Python. We removed columns that we did not need, eg. address, open data x, open data y, and we removed all null values.
 * The merged data was then saved as a CSV file, and we utilized SQL to query and analyze the data to determine the significant findings. 
-* We imported the CSV file onto sqlite to do further queries and create specific tables for analysis and data visualizations. We created 4 tables which included: a table for a pie chart, stacked bar chart, line chart, and map. 
+* We imported the CSV file onto sqlite to do further qgit ueries and create specific tables for analysis and data visualizations. We created 4 tables which included: a table for a pie chart, stacked bar chart, line chart, and map. 
 
 ## FLASK 
 
@@ -54,9 +54,11 @@ The primary aim of the project is to analyze data and derive insights into the t
 
 ### Mapping
 ### Pie Chart and Pivot Table
+![pie](data/piechart.png)
 
 * We plotted an interactive pie chart using Plotly to analyze the number of crime and percentage of crime in the top 8 offense categories ('Larceny Offenses', 'Vandalism', 'Motor Vehicle Theft', 'Burglary', 'Assault Offenses', 'Fraud Offenses', 'Robbery', 'Drug/Narcotic Offenses'). 
 * There were two drop down menus within the pie chart which looked at the time period of the crime occurence (morning, afternoon, evening, and night), and the neighbourhoods where the crime occurred ('Downtown', 'Hazelwood', 'Northwest'). The specific neighbourhoods were selected as they happened to be the top 3 neighbourhoods that had the most crime in Portland, OR. 
+![pivot](data/pivottable.PNG)
 * We also plotted a pivot table that looked at number of crimes compared to the time (morning, afternoon, evening, and night) to get a better understanding of when the most crimes occurred. There was a drop down menu that can switch between the top 3 neighbourhoods with the most crime, so the tables specifically had information for the 3 neighbourhoods. D3 was utilized to create this pivot table. 
 
 ### Stacked Bar Chart 
