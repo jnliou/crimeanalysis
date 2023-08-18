@@ -4,7 +4,7 @@ from flask_cors import CORS
 
 
 def pie_chart():
-    engine = db.create_engine("sqlite:///Data Boot Camp\Project 3\project3\project3.db")
+    engine = db.create_engine("sqlite:///project3.db")
     print(engine)
 
     conn = engine.connect()
@@ -33,7 +33,7 @@ def pie_chart():
     return data_list
 
 def line_chart():
-    engine = db.create_engine("sqlite:///Data Boot Camp\Project 3\project3\project3.db")
+    engine = db.create_engine("sqlite:///project3.db")
     print(engine)
 
     conn = engine.connect()
@@ -62,7 +62,7 @@ def line_chart():
 
 
 def map_chart():
-    engine = db.create_engine("sqlite:///Data Boot Camp\Project 3\project3\project3.db")
+    engine = db.create_engine("sqlite:///project3.db")
     print(engine)
 
     conn = engine.connect()
@@ -108,7 +108,7 @@ def map_chart():
     return data_geo_list
 
 def stacked_chart():
-    engine = db.create_engine("sqlite:///Data Boot Camp\Project 3\project3\project3.db")
+    engine = db.create_engine("sqlite:///project3.db")
     print(engine)
 
     conn = engine.connect()
