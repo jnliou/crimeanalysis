@@ -35,7 +35,7 @@ function createFeatures(data){
     opacity: 1,
     fillOpacity: 0.8
 };
-  // var mki = L.icon.mapkey({icon:"school",color:'#725139',background:'#f2c357',size:30}
+
 
   var geojson = L.geoJson(data, {
 
@@ -64,9 +64,6 @@ function createFeatures(data){
 }
 
 
-// Creating MapkeyIcon object
-// Append to marker:
-// L.marker([50,14.4],{icon:mki}).addTo(map);
 
 
 // You need to define markerColor function for your legend to work correctly
