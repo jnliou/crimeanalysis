@@ -25,7 +25,7 @@ def pie_chart():
             'category': record[0],
             'neighbourhood': record[1],
             'period': record[2],
-            'count': record[3],
+            'count': record[3].astype(int),
             'percentage': record[4],
         }
         data_list.append(data_dict)

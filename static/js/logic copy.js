@@ -12,6 +12,11 @@ let baseMaps = {
 };
 
 
+// Creating MapkeyIcon object
+let mki = L.icon.mapkey({icon:"school",color:'#725139',background:'#f2c357',size:30});
+// Append to marker:
+L.marker([50,14.4],{icon:mki}).addTo(map);
+
 
 let map = L.map("map", {
   center: [45.5152, -122.6784],
@@ -29,7 +34,15 @@ d3.json(mapurl).then(function(data) {
 
 
 function createFeatures(data){
-  
+  var geojsonMarkerOptions = {
+    radius: 8,
+    fillColor: "F6635C",
+    color: "#0C356A",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+};
+  // var mki = L.icon.mapkey({icon:"school",color:'#725139',background:'#f2c357',size:30}
 
   var geojson = L.geoJson(data, {
 
@@ -40,18 +53,13 @@ function createFeatures(data){
     onEachFeature: function (feature, layer) {
       var popupText = `<h3>Crime Type:${feature.properties.type}<h3><hr>
                        <li>Neighborhood:${feature.properties.neighbourhood}</li>
-                       <li>Year:${feature.properties.year}</li>
-                       <li>Total Offense:${feature.properties.total_offense}</li>` ;
+                       <li>Year:${feature.properties.year}</li>` ;
   
    
       layer.bindPopup(popupText);
     },
     pointToLayer: function (feature, latlng) {
-    return L.marker(latlng, {icon:mki = L.icon.mapkey({  
-      icon:"avatar",
-      color: markerColor(feature.properties.total_offense),
-      background:'#102C57',
-      size:30})});
+    return L.circleMarker(latlng, geojsonMarkerOptions);
     }
   });
    
@@ -63,10 +71,14 @@ function createFeatures(data){
 }
 
 
-function markerColor(amount) {
-  return  amount> 90 ? 'Red' :
-          amount > 50 ? '#FD8D14' :
-          amount > 9 ? '#F8DE22' :
-                        'White' ;          
-  };
+// Creating MapkeyIcon object
+// Append to marker:
+// L.marker([50,14.4],{icon:mki}).addTo(map);
 
+
+// You need to define markerColor function for your legend to work correctly
+
+// Creating MapkeyIcon object
+// var mki = L.icon.mapkey({icon:"school",color:'#725139',background:'#f2c357',size:30}
+// // Append to marker:
+// L.marker([50,14.4],{icon:mki}).addTo(map);
