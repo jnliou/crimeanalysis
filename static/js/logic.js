@@ -27,7 +27,7 @@ d3.json(mapurl).then(function(data) {
   createFeatures(data);
 });
 
-
+// Start of Function
 function createFeatures(data){
   
 
@@ -54,19 +54,47 @@ function createFeatures(data){
       size:30})});
     }
   });
-   
+
+
+  
+ 
+// Create a legend to display information about our map.
+ let info = L.control({
+  position: "bottomright"
+  });
+
+// When the layer control is added, insert a div with the class of "legend".
+info.onAdd = function(map) {
+  let div = L.DomUtil.create("div", "legend"),
+  labels = [],
+  catergory = [1,10,50,90];
+
+
+for (let i = 0; i < catergory.length; i++) {
+  div.innerHTML +=
+      '<i style="background:' + markerColor(catergory[i] + 1) + '"></i> ' +
+      catergory[i] + (catergory[i + 1] ? '&ndash;' + catergory[i + 1] + '<br>' : '+');
+}   
+
+return div;
+
+}; 
+info.addTo(map);
+
   var markers = L.markerClusterGroup();
   markers.addLayer(geojson)
   
   map.addLayer(markers);
 
 }
+//End of Function
 
 
+//Defining the filter
 function markerColor(amount) {
-  return  amount> 90 ? 'Red' :
-          amount > 50 ? '#FD8D14' :
-          amount > 9 ? '#F8DE22' :
+  return  amount>= 90 ? 'Red' :
+          amount >= 50 ? '#FD8D14' :
+          amount >= 10 ? '#F8DE22' :
                         'White' ;          
   };
 
