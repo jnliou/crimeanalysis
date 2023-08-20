@@ -44,7 +44,7 @@ The primary aim of the project is to analyze data and derive insights into the t
 
 ## FLASK 
 
-* We utilized SQLAlchemy and Flask to create API routes in JSON format for each chart, the routes were named as followed:
+We utilized SQLAlchemy and Flask to create API routes in JSON format for each chart, the routes were named as followed:
 * /api/v1.0/pie
 * /api/v1.0/map
 * /api/v1.0/line
@@ -53,6 +53,15 @@ The primary aim of the project is to analyze data and derive insights into the t
 ## Data Analysis 
 
 ### Mapping
+
+### Line Chart
+
+In the dataset we used for this project, we were looking at 3 major categories of crime and who they were committed against - Person, Property and Society. 
+* This visualization, helps the user understand the trends that can be observed over the last 5 years in these 3 major categories.
+* The chart also includes a dropdown for the user so they can choose and analyze the trends for each category for a better understanding.
+* Each category is then split into various sub-categories, the chart allows the user to see not only the overall trends for a particular category but also the number of offenses that occurrred in each category.
+* We used Chart.js to plot.
+  
 ### Pie Chart and Pivot Table
 ![pie](data/piechart.png)
 
