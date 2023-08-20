@@ -45,13 +45,6 @@
 
   <!-- <div id="line"></div> -->
 
-  <div id="controls" style = "width: 40rem">    
-    <label for="crimeSelect">Select Crime:</label>
-    <select id="crimeSelect"></select>
-    <div id="bar"> </div>
-      
-    </div>
-
   <br>
   
     <!-- The div that holds our line chart -->
@@ -66,11 +59,16 @@
     
     <div class="container">
       <div class="row">
-        <div class="col-12">
+        <div class="col-6">
           <div id="lineChartContainer" style="width: 50rem">
             <canvas id="lineChart"></canvas>
           </div>
         </div>
+      </div>
+      <div id="controls" style = "width: 40rem">    
+        <label for="crimeSelect">Select Crime:</label>
+        <select id="crimeSelect"></select>
+        <div id="bar"> </div>
       </div>
     </div>
 
@@ -86,37 +84,30 @@
 </style>
 
 <!-- The div that holds our pie chart and pivot table -->
-
-<!-- The div that holds our pie chart and pivot table -->
-<div class="container" style="width: 100%; height: 500px">
-  <div class="row">
-    <!-- Pie Chart Column -->
-    <div class="col-md-8">
-      <div class="charts">
-        <div id="chart"></div>
-      </div>
+<label for="pivot-table-dropdown">Top 3 Neighborhoods:</label>
+      <div class="filters">
+      <label for="neighborhood">Neighborhood:</label>
+      <select id="neighborhood"></select>
+      <label for="timePeriod">Time Period:</label>
+      <select id="timePeriod"></select>
     </div>
-    <!-- Pivot Table Column -->
-    <div class="col-md-4">
-      <div class="row">
-        <div class="col-12">
-          <div class="pivot-table-header">
-            <label for="pivot-table-dropdown">Top 3 Neighborhoods:</label>
-          </div>
-          <div class="filters">
-            <label for="neighborhood">Neighborhood:</label>
-            <select id="neighborhood"></select>
-            <label for="timePeriod">Time Period:</label>
-            <select id="timePeriod"></select>
-          </div>
-          <div class="pivot-table-container">
-            <div id="pivot-table"></div>
-          </div>
-        </div>
-      </div>
+<div class="container">
+<div class="row">
+<div class="col-4">
+<div id="container" style="width: 50rem">
+      <div id="pie"></div>
     </div>
   </div>
 </div>
+<div id="pivot-table" style = "width: 40rem">    
+  <div class="pivot-table-container"></div>
+  <div class="filters"></div>
+  <label for="neighborhood">Neighborhood:</label>
+  <select id="neighborhood"></select>
+  <div id="pivot-table"> </div>
+</div>
+
+
 
 
   <!-- Include Chart.js -->

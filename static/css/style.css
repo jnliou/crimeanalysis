@@ -158,6 +158,15 @@ html {
   width: 48%; /* Adjust the width of the pivot table container */
 }
 
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+
+
 /* .map-container {
   width: 50%;
   height: 400px;
