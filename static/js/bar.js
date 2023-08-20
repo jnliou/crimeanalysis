@@ -1,8 +1,8 @@
 
-const dataURL = "http://127.0.0.1:5000/bar"; // Replace with your Flask API endpoint URL
+const barURL = "http://127.0.0.1:5000/bar"; // Replace with your Flask API endpoint URL
 
 // Fetch data from Flask API
-fetch(dataURL)
+fetch(barURL)
     .then(response => response.json())
     .then(data => {
         const years = data.year;
@@ -49,7 +49,7 @@ fetch(dataURL)
                 yaxis: { title: 'Total Offense' }
             };
 
-            Plotly.newPlot('chart', [trace], layout);
+            Plotly.newPlot('bar', [trace], layout);
         }
 
         updateChart(selectedCategory);
