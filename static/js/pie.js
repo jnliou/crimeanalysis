@@ -51,7 +51,7 @@ d3.json(dataURL).then(function(jsonData) {
         margin: { l: 40, r: 40, t: 40, b: 40 }, // Adjust margins as needed
       };
   
-      Plotly.newPlot("chart", [trace], layout);
+      Plotly.newPlot("pie", [trace], layout);
     }
   
     neighborhoodSelect.on("change", updateChart);
