@@ -15,13 +15,15 @@ The primary aim of the project is to analyze data and derive insights into the t
 * Python
 * Flask
 * SQLite
+* SQL
 * HTML
 * CSS
 * JavaScript
-* D3
-* Leaflet
+* D3.js 
+* Leaflet.js
 * Plotly
 * GeoJSON
+* Chart.js 
 
 ## Dataset used:
 * [Monthly Portland Neighborhood Offense Statistics by Portland Police Bureau from 2019 to 2023](https://public.tableau.com/app/profile/portlandpolicebureau/viz/New_Monthly_Neighborhood/MonthlyOffenseTotals) 
