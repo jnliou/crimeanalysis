@@ -15,6 +15,8 @@
 
   <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  <link rel="stylesheet" href="Barstyle.css">
+
   <!-- Marker cluster CSS -->
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
@@ -40,11 +42,20 @@
 <br>
 <div id="map" style = "width: 100%; height: 500px; border: 3px solid #0f0101;"></div>
 <br>
-  <!-- <div id="line"></div>
-  <div id="stacked"></div> -->
+
+  <!-- <div id="line"></div> -->
+
+  <div id="controls" style = "width: 40rem">    
+    <label for="crimeSelect">Select Crime:</label>
+    <select id="crimeSelect"></select>
+    <div id="bar"> </div>
+      
+    </div>
+
+  <br>
   
-    <!-- The div that holds our line chart and pivot table -->
-    <div id="crimeDropdownContainer">
+    <!-- The div that holds our line chart -->
+    <div id="crimeDropdownContainer"></div>
       <label for="crimeDropdown">Crime Against:</label>
       <select id="crimeDropdown">
         <option value="Person">Person</option>
@@ -56,28 +67,53 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div id="lineChartContainer" style="width: 40rem">
+          <div id="lineChartContainer" style="width: 50rem">
             <canvas id="lineChart"></canvas>
           </div>
         </div>
       </div>
     </div>
- 
-  <!-- The div that holds our pie chart and pivot table -->
-<div class="container">
-  <div class="filters">
-    <label for="neighborhood">Neighborhood:</label>
-    <select id="neighborhood"></select>
-    <label for="timePeriod">Time Period:</label>
-    <select id="timePeriod"></select>
-  </div>
-  <div class="charts">
-    <div id="chart"></div>
-    <div class="pivot-table-container">
-      <div class="pivot-table-header">
-        <label for="pivot-table-dropdown">Top 3 Neighborhoods:</label>
+
+    <style> visualization-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+  }
+  .visualization {
+      padding: 20px;
+      border: 1px solid #ccc;
+  }
+</style>
+
+<!-- The div that holds our pie chart and pivot table -->
+
+<!-- The div that holds our pie chart and pivot table -->
+<div class="container" style="width: 100%; height: 500px">
+  <div class="row">
+    <!-- Pie Chart Column -->
+    <div class="col-md-8">
+      <div class="charts">
+        <div id="chart"></div>
       </div>
-      <div id="pivot-table"></div>
+    </div>
+    <!-- Pivot Table Column -->
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="pivot-table-header">
+            <label for="pivot-table-dropdown">Top 3 Neighborhoods:</label>
+          </div>
+          <div class="filters">
+            <label for="neighborhood">Neighborhood:</label>
+            <select id="neighborhood"></select>
+            <label for="timePeriod">Time Period:</label>
+            <select id="timePeriod"></select>
+          </div>
+          <div class="pivot-table-container">
+            <div id="pivot-table"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -100,7 +136,10 @@
 
  
   <!-- Our JavaScript -->
-  <!-- The script linked to pie chart -->
+  <!-- The script linked to bar chart -->
+  <script type="text/javascript" src="static/js/bar.js"></script>
+  <!-- The script linked to line chart -->
+  
   <script type="text/javascript" src="static/js/linechart.js"></script>
 
   <!-- The script linked to Map chart -->
@@ -108,6 +147,9 @@
 
   <!-- The script linked to pie chart -->
   <script type="text/javascript" src="static/js/logic.js"></script>
+
+
+
   <!-- Our mapkey JS -->
   <script src="dist\L.Icon.Mapkey.js"></script>
   
