@@ -40,7 +40,7 @@ The primary aim of the project is to analyze data and derive insights into the t
 
 * The crime data obtained from the Portland Police Bureau frm 2019 to 2023 was merged and cleaned on Python. We removed columns that we did not need, eg. address, open data x, open data y, and we removed all null values.
 * The merged data was then saved as a CSV file, and we utilized SQL to query and analyze the data to determine the significant findings. 
-* We imported the CSV file onto sqlite to do further qgit ueries and create specific tables for analysis and data visualizations. We created 4 tables which included: a table for a pie chart, stacked bar chart, line chart, and map. 
+* We imported the CSV file onto SQLite to do further perform queries and create specific tables for analysis and data visualizations. We created 4 tables which included: a table for a pie chart, stacked bar chart, line chart, and map. 
 
 ## FLASK 
 

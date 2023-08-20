@@ -11,8 +11,8 @@ SELECT CaseNumber,
        NewOccurTimeFormat,
        TimePeriod
   FROM data;
----Yasir -Stacked --- 
-Create table stacked AS
+---Yasir -Bar --- 
+Create table bar AS
 SELECT Year, CrimeAgainst,OffenseCategory,
 COUNT (OffenseCount) AS "Total Offense cases"
 FROM Crime
