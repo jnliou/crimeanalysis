@@ -1,0 +1,60 @@
+SELECT CaseNumber,
+       CrimeAgainst,
+       Neighborhood,
+       OccurDate,
+       OffenseCategory,
+       OffenseType,
+       OpenDataLat,
+       OpenDataLon,
+       OffenseCount,
+       Year,
+       NewOccurTimeFormat,
+       TimePeriod
+  FROM data;
+---Yasir -Bar --- 
+Create table bar AS
+SELECT Year, CrimeAgainst,OffenseCategory,
+COUNT (OffenseCount) AS "Total Offense cases"
+FROM Crime
+WHERE OffenseCategory IN ('Larceny Offenses', 'Vandalism', 'Motor Vehicle Theft', 'Burglary', 'Assault Offenses')
+GROUP BY Year, CrimeAgainst, OffenseCategory
+ORDER BY Year,CrimeAgainst;
+
+--Manpreet- Line--
+CREATE TABLE line AS
+SELECT Year,Neighborhood,OffenseCategory,
+COUNT (OffenseCount) AS "Total Offense cases "
+FROM Crime
+GROUP BY Year,Neighborhood,OffenseCategory
+ORDER BY Year,Neighborhood;
+
+---Kevin-Map---
+CREATE TABLE map AS
+SELECT Year,Neighborhood,OffenseCategory,OpenDataLat, OpenDataLon, 
+COUNT (OffenseCount) AS "TotalOffense"
+FROM Crime
+GROUP BY Neighborhood,OffenseCategory
+ORDER BY Year,Neighborhood;
+
+--Julia-Map--
+CREATE TABLE pie AS
+SELECT 
+    OffenseCategory, 
+    Neighborhood, 
+    TimePeriod, 
+    COUNT(*) AS CategoryCount,
+    SUM(COUNT(*)) OVER (PARTITION BY Neighborhood, TimePeriod) AS TotalCount,
+    100.0 * COUNT(*) / SUM(COUNT(*)) OVER (PARTITION BY Neighborhood, TimePeriod) AS Percentage
+FROM 
+    crime
+WHERE 
+    Neighborhood IN ('Downtown', 'Hazelwood', 'Northwest')
+    AND OffenseCategory IN ('Larceny Offenses', 'Vandalism', 'Motor Vehicle Theft', 'Burglary', 'Assault Offenses', 'Fraud Offenses', 'Robbery', 'Drug/Narcotic Offenses')
+GROUP BY 
+    OffenseCategory, Neighborhood, TimePeriod
+ORDER BY 
+    Neighborhood, TimePeriod, CategoryCount DESC;
+    
+ALTER TABLE pie DROP COLUMN TotalCount;
+
+SELECT * from pie
