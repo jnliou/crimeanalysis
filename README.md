@@ -55,6 +55,12 @@ We utilized SQLAlchemy and Flask to create API routes in JSON format for each ch
 ## Data Analysis 
 
 ### Mapping
+![image](https://github.com/jnliou/project3/assets/15763802/36e0ba43-4540-49dd-9b4b-8a676b6f45c8)
+*Coverting files into geojson format, was able to get all the coordinates to reflect the type of crimes that have been commited at the Location/Neighborhood.
+*Map contains 3 layers, one with default openstreetmap, following with 2 map from google. ( Satellite vs Google map ) 
+*Map includes a legned, color changes as the total number of crime is being commited at the spot.
+*Using cluster and mapkey addon to better visualize.
+*We use logic.js to plot
 
 ### Line Chart
 
