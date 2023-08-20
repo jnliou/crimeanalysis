@@ -157,3 +157,19 @@ html {
 .pivot-table-container {
   width: 48%; /* Adjust the width of the pivot table container */
 }
+
+/* .map-container {
+  width: 50%;
+  height: 400px;
+  float: left;
+  margin: 20px;
+  border: 1px solid #ccc;
+}
+
+.visualization-container {
+  width: 50%;
+  float: left;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+} */
