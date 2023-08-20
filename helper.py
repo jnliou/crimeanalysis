@@ -107,31 +107,37 @@ def map_chart():
 
     return data_geo_list
 
-def stacked_chart():
+def bar_chart():
     engine = db.create_engine("sqlite:///project3.db")
     print(engine)
 
     conn = engine.connect()
 
-    metadata = db.MetaData()  # extracting the metadata
-    data = db.Table('stacked', metadata, autoload_with=engine)  # Table object
+    metadata = db.MetaData() #extracting the metadata
+    data= db.Table('bar', metadata, autoload_with=engine) #Table object
     print(data.columns)
 
-    query = data.select()  # SELECT * FROM divisions
+    query = data.select() #SELECT * FROM divisions
 
-    exe = conn.execute(query)  # executing the query
-    result = exe.fetchall()
+    exe = conn.execute(query) #executing the query
+    result = exe.fetchall() 
 
-    data_list = []
+    year = []
+    crime= []
+    category = []
+    total_offense = []
 
     for record in result:
-        data_dict = {
-            'year': record[0],
-            'crime': record[1],
-            'category': record[2],
-            'total_offense': record[3],
-        }
-        data_list.append(data_dict)
+        year.append(record[0])
+        crime.append(record[1])
+        category.append(record[2])
+        total_offense.append(record[3])
+       
+    return {
+        'year': year,
+        'crime': crime,
+        'category': category,
+        'total_offense': total_offense,
+    }
 
-    return data_list
 
