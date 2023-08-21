@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -24,7 +23,7 @@
   <link rel="stylesheet" href="dist\L.Icon.Mapkey.css" />
 </head>
 
-</head>
+
    
 <body>
   <img src="1920px-Portland_and_Mt._Hood_from_Pittock_Mansion (1).jpg" alt="Portland, Oregon" width="100%" height="600" class="translucent-image" style="align-items: center;">
@@ -38,16 +37,13 @@
   <a href="https://public.tableau.com/app/profile/portlandpolicebureau/viz/New_Monthly_Neighborhood/MonthlyOffenseTotals">
   <button style="text-align:center; font-family: 'Roboto', sans-serif"> Data Source</button>
   </a>
-  <!-- The div that holds our map -->
+<!-- The div that holds our map -->
 <br>
 <div id="map" style = "width: 100%; height: 500px; border: 3px solid #0f0101;"></div>
 <br>
-
-  <!-- <div id="line"></div> -->
-
-  <br>
+<br>
   
-    <!-- The div that holds our line chart -->
+<!-- The div that holds our line & bar chart -->
     <div id="crimeDropdownContainer"></div>
       <label for="crimeDropdown">Crime Against:</label>
       <select id="crimeDropdown">
@@ -72,7 +68,7 @@
       </div>
     </div>
 
-    <style> visualization-container {
+<style> visualization-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 20px;
@@ -104,10 +100,23 @@
   <div class="filters"></div>
   <label for="neighborhood">Neighborhood:</label>
   <select id="neighborhood"></select>
+
   <div id="pivot-table"> </div>
 </div>
 
-
+<!-- Line chart-2 container -->
+Overall Crime Rate Analysis by Category, 2019-2023
+<div id="singleChartContainer" style="width: 80%; margin: 0 auto;">
+  <div id="optionsContainer">
+    <label for="Options">Crime Against:</label>
+    <select id="Options">
+      <option value="Person">Person</option>
+      <option value="Society">Society</option>
+      <option value="Property">Property</option>
+    </select>
+  </div>
+  <canvas id="singleChart"></canvas>
+</div>
 
 
   <!-- Include Chart.js -->
@@ -127,8 +136,10 @@
 
  
   <!-- Our JavaScript -->
+
   <!-- The script linked to bar chart -->
   <script type="text/javascript" src="static/js/bar.js"></script>
+
   <!-- The script linked to line chart -->
   
   <script type="text/javascript" src="static/js/linechart.js"></script>
@@ -138,6 +149,9 @@
 
   <!-- The script linked to pie chart -->
   <script type="text/javascript" src="static/js/logic.js"></script>
+
+  <!-- The script linked to singleline chart -->
+  <script type="text/javascript" src="static/js/singlechart.js"></script>
 
 
 
