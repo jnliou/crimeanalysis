@@ -75,9 +75,13 @@ d3.json(dataURL).then(function(jsonData) {
    const neighborhoods = [...new Set(jsonData.map(d => d.neighbourhood))];
    const timePeriods = ["Morning", "Afternoon", "Evening", "Night"];
 
-   const neighborhoodSelect = d3.select("body")
+   /*const neighborhoodSelect = d3.select("body")
      .append("select")
      .attr("id", "neighborhood-select")
+     .on("change", updatePivotTable); */
+
+   const neighborhoodSelect = d3
+     .select("#neighborhood2") // Use the new ID "neighborhoodPivot"
      .on("change", updatePivotTable);
 
    neighborhoodSelect.selectAll("option")
@@ -126,4 +130,5 @@ d3.json(dataURL).then(function(jsonData) {
    updatePivotTable();
  })
  .catch(error => console.error("Error fetching data:", error));
+ 
  
