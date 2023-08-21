@@ -63,6 +63,8 @@ We utilized SQLAlchemy and Flask to create API routes in JSON format for each ch
 *  We use logic.js to plot
 
 ### Line Chart
+![linechart](https://github.com/jnliou/project3/assets/131678606/87d3b79c-15c8-4dc5-95af-298a15d949ed)
+
 
 In the dataset we used for this project, we were looking at 3 major categories of crime and who they were committed against - Person, Property and Society. 
 * This visualization, helps the user understand the trends that can be observed over the last 5 years in these 3 major categories.
