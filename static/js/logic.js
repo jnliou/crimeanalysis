@@ -4,12 +4,12 @@ let street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 });
 let googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
-  maxZoom: 20,
+  maxZoom: 20,attribution: 'Google',
   subdomains:['mt0','mt1','mt2','mt3']
 });
 
 let googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
-  maxZoom: 20,
+  maxZoom: 20, attribution: 'Google',
   subdomains:['mt0','mt1','mt2','mt3']
 });
 
@@ -75,7 +75,7 @@ L.control.layers(baseMaps).addTo(map);
 // When the layer control is added, insert a div with the class of "legend".
 info.onAdd = function(map) {
   let div = L.DomUtil.create("div", "legend"),
-  labels = [],
+  
   catergory = [1,10,50,90];
 
 
