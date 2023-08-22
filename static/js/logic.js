@@ -30,8 +30,8 @@ let map = L.map("map", {
 
 //getting request and load
 d3.json(mapurl).then(function(data) {
-  console.log(data);
-  console.log(data[0].properties.type);
+  //console.log(data);
+  //console.log(data[0].properties.type);
   createFeatures(data);
 });
 
@@ -40,10 +40,6 @@ function createFeatures(data){
   
 
   var geojson = L.geoJson(data, {
-
-    style: function (feature) {
-      return {'color': feature.properties.color};
-    },
   
     onEachFeature: function (feature, layer) {
       var popupText = `<h3>Crime Type:${feature.properties.type}<h3><hr>
