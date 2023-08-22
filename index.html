@@ -27,12 +27,12 @@
    
 <body>
   <img src="1920px-Portland_and_Mt._Hood_from_Pittock_Mansion (1).jpg" alt="Portland, Oregon" width="100%" height="600" class="translucent-image" style="align-items: center;">
-  </a>  
+  
    <div class="neato-header">
     <h1 style="text-align:center; font-family: 'Roboto', sans-serif">Portland, Oregon Crime Rate Analysis</h1>
     <h2 style="text-align:center; font-family: 'Roboto', sans-serif"> 2019 - 2023 </h2>
     <a href="https://github.com/jnliou/project3">
-    <button style="text-align:center; font-family: 'Roboto', sans-serif"> Git Hub Repo</button>
+    <button style="text-align:center; font-family: 'Roboto', sans-serif"> Git Hub Repo</button> </a>
   
   <a href="https://public.tableau.com/app/profile/portlandpolicebureau/viz/New_Monthly_Neighborhood/MonthlyOffenseTotals">
   <button style="text-align:center; font-family: 'Roboto', sans-serif"> Data Source</button>
@@ -95,31 +95,16 @@
     </div>
   </div>
 </div>
-<div id="pivot-table" style = "width: 40rem">    
+<div id="pivot-table" style = "width: 40rem">  
+  <h3>Top 5 Neighborhoods with Crime and their Total Crime from 2019-2023</h3>  
   <div class="pivot-table-container"></div>
   <div class="filters"></div>
-  <label for="pivot-table-dropdown">Top 3 Neighborhoods:</label>
-  <select id="neighborhood2"></select>
-
   <div id="pivot-table"> </div>
+  <div id="neighborhood-table"></div>
+  <h3 align = "center"> Total Offenses of the Top 3 Neighborhood with Crime and the Time of Day the Offense Occurred</h3>
+  <br><label for="pivot-table-dropdown">Top 3 Neighborhoods:</label>
+  <select id="neighborhood2"></select></div></br>
 </div>
-
-
-
-<!-- Line chart-2 container -->
-Overall Crime Rate Analysis by Category, 2019-2023
-<div id="singleChartContainer" style="width: 80%; margin: 0 auto;">
-  <div id="optionsContainer">
-    <label for="Options">Crime Against:</label>
-    <select id="Options">
-      <option value="Person">Person</option>
-      <option value="Society">Society</option>
-      <option value="Property">Property</option>
-    </select>
-  </div>
-  <canvas id="singleChart"></canvas>
-</div>
-
 
   <!-- Include Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -152,8 +137,8 @@ Overall Crime Rate Analysis by Category, 2019-2023
   <!-- The script linked to pie chart -->
   <script type="text/javascript" src="static/js/logic.js"></script>
 
-  <!-- The script linked to singleline chart -->
-  <script type="text/javascript" src="static/js/singlechart.js"></script>
+  <!-- The script linked to neighborhood table -->
+  <script type="text/javascript" src="static/js/neighborhood.js"></script>
 
 
 

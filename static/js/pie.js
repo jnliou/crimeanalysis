@@ -1,38 +1,38 @@
 let dataURL = "http://127.0.0.1:5000/pie";
 
 // Pie Chart 
-// Fetch JSON data from the file
+// Fetch JSON data from the API using d3
 d3.json(dataURL).then(function(jsonData) {
-    var neighborhoodSelect = d3.select("#neighborhood");
-    var timePeriodSelect = d3.select("#timePeriod");
+    let neighborhoodSelect = d3.select("#neighborhood");
+    let timePeriodSelect = d3.select("#timePeriod");
   
-    // Populate neighborhood and time period dropdowns
-    var neighborhoods = Array.from(new Set(jsonData.map(d => d.neighbourhood)));
+    // Create the neighborhood and time period dropdowns
+    let neighborhoods = Array.from(new Set(jsonData.map(d => d.neighbourhood)));
     neighborhoods.forEach(neighborhood => {
       neighborhoodSelect.append("option").attr("value", neighborhood).text(neighborhood);
     });
   
-    var timePeriods = Array.from(new Set(jsonData.map(d => d.period)));
+    let timePeriods = Array.from(new Set(jsonData.map(d => d.period)));
     timePeriods.forEach(timePeriod => {
       timePeriodSelect.append("option").attr("value", timePeriod).text(timePeriod);
     });
   
     // Initialize chart data
-    var initialNeighborhood = neighborhoods[0];
-    var initialTimePeriod = timePeriods[0];
-    var initialFilteredData = jsonData.filter(d => d.neighourhood === initialNeighborhood && d.period === initialTimePeriod);
+    let initialNeighborhood = neighborhoods[0];
+    let initialTimePeriod = timePeriods[0];
+    let initialFilteredData = jsonData.filter(d => d.neighourhood === initialNeighborhood && d.period === initialTimePeriod);
   
     // Update chart when filters change
     function updateChart() {
-      var selectedNeighborhood = neighborhoodSelect.property("value");
-      var selectedTimePeriod = timePeriodSelect.property("value");
+      let selectedNeighborhood = neighborhoodSelect.property("value");
+      let selectedTimePeriod = timePeriodSelect.property("value");
   
-      var filteredData = jsonData.filter(d => d.neighbourhood === selectedNeighborhood && d.period === selectedTimePeriod);
+      let filteredData = jsonData.filter(d => d.neighbourhood === selectedNeighborhood && d.period === selectedTimePeriod);
   
-      var labels = filteredData.map(d => d.category);
-      var values = filteredData.map(d => d.count);
+      let labels = filteredData.map(d => d.category);
+      let values = filteredData.map(d => d.count);
   
-      var trace = {
+      let trace = {
         labels: labels,
         values: values,
         type: "pie",
@@ -40,10 +40,10 @@ d3.json(dataURL).then(function(jsonData) {
       };
   
       //Adjust layout to get pie chart and pivot table together.
-      var layout = {
+      let layout = {
         title: {
           text: "Pie Chart of Top 8 Offense Categories with Top 3 Neighbourhoods with Crime and Time Period of Offense",
-          font: { size: 10 }, 
+          font: { size: 11 }, 
         },
         width: 800, 
         height: 470, 
@@ -61,17 +61,18 @@ d3.json(dataURL).then(function(jsonData) {
   });
 
 // Pivot table
+// Fetch data from API using d3
 d3.json(dataURL).then(function(jsonData) {
-  const neighborhoods = [...new Set(jsonData.map(d => d.neighbourhood))];
-  const timePeriods = ["Morning", "Afternoon", "Evening", "Night"];
-  const timePeriodDescriptions = {
+  let neighborhoods = [...new Set(jsonData.map(d => d.neighbourhood))];
+  let timePeriods = ["Morning", "Afternoon", "Evening", "Night"];
+  let timePeriodDescriptions = {
     "Morning": "Morning (0500-1200)",
     "Afternoon": "Afternoon (1200-1700)",
     "Evening": "Evening (1700-2100)",
     "Night": "Night (2100-0500)"
   };
 
-  const neighborhoodSelect = d3
+  let neighborhoodSelect = d3
       .select("#neighborhood2")
       .on("change", updatePivotTable);
 
@@ -81,15 +82,15 @@ d3.json(dataURL).then(function(jsonData) {
       .append("option")
       .text(d => d);
 
-  const pivotTable = d3.select("#pivot-table")
+  let pivotTable = d3.select("#pivot-table")
       .append("table")
       .attr("class", "pivot-table");
 
   function updatePivotTable() {
-      const selectedNeighborhood = neighborhoodSelect.node().value;
-      const filteredData = jsonData.filter(d => d.neighbourhood === selectedNeighborhood);
+      let selectedNeighborhood = neighborhoodSelect.node().value;
+      let filteredData = jsonData.filter(d => d.neighbourhood === selectedNeighborhood);
 
-      const pivotData = {};
+      let pivotData = {};
 
       // Initialize pivot data
       timePeriods.forEach(timePeriod => {
@@ -101,7 +102,7 @@ d3.json(dataURL).then(function(jsonData) {
           pivotData[d.period].count += d.count;
       });
 
-      const totalCrimeCount = filteredData.reduce((sum, d) => sum + d.count, 0);
+      let totalCrimeCount = filteredData.reduce((sum, d) => sum + d.count, 0);
 
       timePeriods.forEach(timePeriod => {
           pivotData[timePeriod].percentage = ((pivotData[timePeriod].count / totalCrimeCount) * 100).toFixed(2) + "%";
@@ -111,14 +112,14 @@ d3.json(dataURL).then(function(jsonData) {
       pivotTable.selectAll("*").remove();
 
       // Create table header row
-      const tableHeader = pivotTable.append("tr");
+      let tableHeader = pivotTable.append("tr");
       tableHeader.append("th").text("Time Period");
       tableHeader.append("th").text("Total Offenses");
       tableHeader.append("th").text("Percentage");
 
       // Create table rows
       timePeriods.forEach(timePeriod => {
-          const tableRow = pivotTable.append("tr");
+          let tableRow = pivotTable.append("tr");
           tableRow.append("td").text(timePeriodDescriptions[timePeriod]);
           tableRow.append("td").text(pivotData[timePeriod].count);
           tableRow.append("td").text(pivotData[timePeriod].percentage);
