@@ -1,9 +1,14 @@
+// Set the URL for fetching crime data
 const crimeURL = "http://127.0.0.1:5000/line";
 
+// Get references to the dropdown and canvas elements
 const crimeDropdown = document.getElementById("crimeDropdown");
 const lineChartCanvas = document.getElementById("lineChart");
 
+// Get the 2D rendering context of the canvas
 const ctx = lineChartCanvas.getContext("2d");
+
+// Initialize arrays and objects for chart data
 const xValues = [];
 const datasets = {};
 
@@ -22,6 +27,8 @@ const colors = [
   "#008080",
   "#8B0001",
 ];
+
+// Create a new line chart instance using the Chart.js library
 
 const lineChart = new Chart(ctx, {
   type: "line",
@@ -66,13 +73,14 @@ const lineChart = new Chart(ctx, {
 });
 
 
-
+// Add a listener to the crimeDropdown for change event
 crimeDropdown.addEventListener("change", async function () {
   const selectedCrime = crimeDropdown.value;
   lineChart.data.datasets = datasets[selectedCrime];
   lineChart.update();
 });
 
+// Function to fetch data from the crimeURL and populate the chart
 async function fetchData() {
   try {
     const response = await fetch(crimeURL);
@@ -116,4 +124,5 @@ async function fetchData() {
   }
 }
 
+// Call the fetchData function to populate the chart with data
 fetchData();
