@@ -12,15 +12,10 @@ The primary aim of the project is to analyze data and derive insights into the t
 
 
 ## Programs Utilized:
-
-### Backend 
 * Python
 * Flask
 * SQLite
 * SQL
-* SQLAlchemy 
-
-### Frontend
 * HTML
 * CSS
 * JavaScript
@@ -29,8 +24,6 @@ The primary aim of the project is to analyze data and derive insights into the t
 * Plotly
 * GeoJSON
 * Chart.js 
-### Other
-* GitHub
 
 ## Dataset used:
 * [Monthly Portland Neighborhood Offense Statistics by Portland Police Bureau from 2019 to 2023](https://public.tableau.com/app/profile/portlandpolicebureau/viz/New_Monthly_Neighborhood/MonthlyOffenseTotals) 
@@ -42,18 +35,10 @@ The primary aim of the project is to analyze data and derive insights into the t
  * [Crime Data 2022](data/CrimeData-2022.csv)
  * [Crime Data 2023](data/CrimeData-2023.csv)
 
-## To run the app:
-
-* Git clone- https://github.com/jnliou/project3.git 
-* cd into directory- project3
-* Start Flask app with [app.py](app.py)
-* Run [index.html](index.html) to view the dashboard in a browser
-
 ## Data Cleaning and Processing 
 
 ### Data Cleaning CSV files for Analysis: 
 * [CSV file used for analysis](<data/updated-Datafile-Crime3 (Final).zip>)
-* [Jupyter Notebook Code for ETL](<ETL of the data.ipynb>)
 
 Data cleaning and wrangling were fundamental steps in preparing raw data for meaningful analysis. For the challenge 3, our group selected crime data from Portland Oregon police website and the process of cleaning and wrangling five-year data files from 2019 to 2023 was done.
 
@@ -86,13 +71,11 @@ Once we had consistent structures of data, we integrated it into a single DataFr
 
 ## FLASK 
 
-We utilized SQLAlchemy and Flask to create API routes in JSON format for each chart/table, the routes were named as followed:
+We utilized SQLAlchemy and Flask to create API routes in JSON format for each chart, the routes were named as followed:
 * /api/v1.0/pie
 * /api/v1.0/map
 * /api/v1.0/line
 * /api/v1.0/bar
-* /api/v1.0/total
-* /api/v1.0/neighborhood
 
 ## Data Analysis 
 
@@ -117,27 +100,19 @@ In the dataset we used for this project, we were looking at 3 major categories o
 * Each category is then split into various sub-categories, the chart allows the user to see not only the overall trends for a particular category but also the number of offenses that occurrred in each category.
 * We used Chart.js to plot.
 
-Analysis of Trends: 
+Analysis of Trends
 
-* The data was broadly split into three categories in terms of who these crimes were committed against – Person, Property and Society.
-* It was quite interesting to note that the besides Property the other categories had a downward trend in terms of offenses that were being committed.
-* All offenses under Property had a constant rise, larceny being the highest.
-  
-### Pie Chart and Tables
+* The data was broadly split into three categories in terms of who these crimes were committed against – Person, Property and Society. 
+* It was quite interesting to note that the besides Property the other categories had a downward trend in terms of offenses that were being committed. 
+* All offenses under Property had a constant rise, larceny being the highest. 
+
+### Pie Chart and Pivot Table
 ![pie](data/piechart.png)
 
 * We plotted an interactive pie chart using Plotly to analyze the number of crime and percentage of crime in the top 8 offense categories ('Larceny Offenses', 'Vandalism', 'Motor Vehicle Theft', 'Burglary', 'Assault Offenses', 'Fraud Offenses', 'Robbery', 'Drug/Narcotic Offenses'). 
 * There were two drop down menus within the pie chart which looked at the time period of the crime occurence (morning, afternoon, evening, and night), and the neighbourhoods where the crime occurred ('Downtown', 'Hazelwood', 'Northwest'). The specific neighbourhoods were selected as they happened to be the top 3 neighbourhoods that had the most crime in Portland, OR. 
 ![pivot](data/pivottable.PNG)
-* We also plotted a pivot table that looked at number and percentage of crimes compared to the time (morning, afternoon, evening, and night) to get a better understanding of when the most crimes occurred. There was a drop down menu that can switch between the top 3 neighbourhoods with the most crime, so the tables specifically had information for the 3 neighbourhoods. D3 was utilized to create this pivot table. 
-![table](data/neighborhoodtable.PNG)
-
-* We plotted another table using D3 that showed the top 5 neighbourhoods with the most crime, and the total crime count from 2019 to 2023. 
-
-Analysis of Trends:
-* Downtown Crime Epicenter: Highest reported crimes of 17964 within the last 5 years.
-* Time Period: Based on the top 3 neighborhoods with the most crime, larceny is most likely to occur during the afternoon and evenings.
-* More crimes occurred at night in Downtown and Northwest, but more crimes occurred in the afternoon in Hazelwood.
+* We also plotted a pivot table that looked at number of crimes compared to the time (morning, afternoon, evening, and night) to get a better understanding of when the most crimes occurred. There was a drop down menu that can switch between the top 3 neighbourhoods with the most crime, so the tables specifically had information for the 3 neighbourhoods. D3 was utilized to create this pivot table. 
 
 ### Bar Chart 
 Bar Chart presents an analysis of crime trends over the past five years, focusing on top five major categories: larceny, vandalism, motor theft, burglary, and Assualt offences. We used a bar chart to visualize these trends and understand how these crime categories have evolved over time.There is drop down menu for the top five crime categories, the x-axis represents the years, and the y-axis represents the number of reported incidents for each crime category.
@@ -147,12 +122,7 @@ Bar Chart presents an analysis of crime trends over the past five years, focusin
 
 Analysis of Trends:
 
-* In the year 2019, larceny was already showing a higher number of incidents compared to vandalism and motor theft.
-* Over the next few years, larceny consistently maintained its lead as the most reported crime category.
-* Vandalism and motor theft, while also showing fluctuations, remained consistently lower in comparison to larceny.
-
-
-
-
-
+In the year 2019, larceny was already showing a higher number of incidents compared to vandalism and motor theft.
+Over the next few years, larceny consistently maintained its lead as the most reported crime category.
+Vandalism and motor theft, while also showing fluctuations, remained consistently lower in comparison to larceny.
 
