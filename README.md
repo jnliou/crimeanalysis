@@ -75,7 +75,7 @@ We utilized SQLAlchemy and Flask to create API routes in JSON format for each ch
 * /api/v1.0/pie
 * /api/v1.0/map
 * /api/v1.0/line
-* /api/v1.0/stacked
+* /api/v1.0/bar
 
 ## Data Analysis 
 
@@ -99,7 +99,13 @@ In the dataset we used for this project, we were looking at 3 major categories o
 * The chart also includes a dropdown for the user so they can choose and analyze the trends for each category for a better understanding.
 * Each category is then split into various sub-categories, the chart allows the user to see not only the overall trends for a particular category but also the number of offenses that occurrred in each category.
 * We used Chart.js to plot.
-  
+
+Analysis of Trends
+
+* The data was broadly split into three categories in terms of who these crimes were committed against – Person, Property and Society. 
+* It was quite interesting to note that the besides Property the other categories had a downward trend in terms of offenses that were being committed. 
+* All offenses under Property had a constant rise, larceny being the highest. 
+
 ### Pie Chart and Pivot Table
 ![pie](data/piechart.png)
 
