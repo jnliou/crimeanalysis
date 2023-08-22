@@ -151,6 +151,10 @@ Analysis of Trends:
 * Over the next few years, larceny consistently maintained its lead as the most reported crime category.
 * Vandalism and motor theft, while also showing fluctuations, remained consistently lower in comparison to larceny.
 
+##### Presentation
+
+* Presentation of Crime Analysis found here: https://docs.google.com/presentation/d/1Xkok__gCio5lIMTB3KzMKNfvRM9XmUvSeEJECOl197k/edit#slide=id.g276564ff1ea_0_0 
+
 
 
 
