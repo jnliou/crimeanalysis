@@ -108,5 +108,15 @@ In the dataset we used for this project, we were looking at 3 major categories o
 ![pivot](data/pivottable.PNG)
 * We also plotted a pivot table that looked at number of crimes compared to the time (morning, afternoon, evening, and night) to get a better understanding of when the most crimes occurred. There was a drop down menu that can switch between the top 3 neighbourhoods with the most crime, so the tables specifically had information for the 3 neighbourhoods. D3 was utilized to create this pivot table. 
 
-### Stacked Bar Chart 
+### Bar Chart 
+Bar Chart presents an analysis of crime trends over the past five years, focusing on top five major categories: larceny, vandalism, motor theft, burglary, and Assualt offences. We used a bar chart to visualize these trends and understand how these crime categories have evolved over time.There is drop down menu for the top five crime categories, the x-axis represents the years, and the y-axis represents the number of reported incidents for each crime category.
+
+![Barchart](https://github.com/jnliou/project3/assets/131497346/ad268db2-eacf-4262-a6f9-f0e53d147d7e)
+
+
+Analysis of Trends:
+
+In the year 2019, larceny was already showing a higher number of incidents compared to vandalism and motor theft.
+Over the next few years, larceny consistently maintained its lead as the most reported crime category.
+Vandalism and motor theft, while also showing fluctuations, remained consistently lower in comparison to larceny.
 
