@@ -64,6 +64,7 @@ CREATE table total AS
 SELECT Year, 
 COUNT (OffenseCount) AS "Total Offense cases"
 FROM Crime
+WHERE Year in ("2019", "2020", "2021", "2022")
 GROUP BY Year;
 
 --Neighborhood total --
