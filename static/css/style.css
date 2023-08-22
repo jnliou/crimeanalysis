@@ -165,6 +165,28 @@ html {
   grid-gap: 20px;
 }
 
+/* Total Table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 5px solid #ddd; /* Add a border */
+  margin-top: 10px; /* Add some margin for separation */
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: teal;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
 
 
 /* .map-container {

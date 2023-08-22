@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
-from helper import pie_chart, map_chart, bar_chart, line_chart, single_chart
+from helper import pie_chart, map_chart, bar_chart, line_chart, total_chart, neighborhood_chart
 
 
 
@@ -16,7 +16,8 @@ def home():
         f"/api/v1.0/map <br/>"
         f"/api/v1.0/line <br/>"
         f"/api/v1.0/bar <br/>"
-        f"/api/v1.0/single <br/>"
+        f"/api/v1.0/total <br/>"
+        f"/api/v1.0/neighborhood <br/>"
     )
 
 @app.route('/pie')
@@ -39,9 +40,14 @@ def get_data4():
     data = bar_chart()
     return jsonify(data)
 
-@app.route('/single')
+@app.route('/total')
 def get_data5():
-    data = single_chart()
+    data = total_chart()
+    return jsonify(data)
+
+@app.route('/neighborhood')
+def get_data6():
+    data = neighborhood_chart()
     return jsonify(data)
 
 if __name__ == "__main__":

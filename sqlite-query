@@ -10,7 +10,7 @@ SELECT CaseNumber,
        Year,
        NewOccurTimeFormat,
        TimePeriod
-  FROM data;
+  FROM crime;
 ---Yasir -Bar --- 
 Create table bar AS
 SELECT Year, CrimeAgainst,OffenseCategory,
@@ -58,3 +58,19 @@ ORDER BY
 ALTER TABLE pie DROP COLUMN TotalCount;
 
 SELECT * from pie
+
+--Total over the Years --
+CREATE table total AS
+SELECT Year, 
+COUNT (OffenseCount) AS "Total Offense cases"
+FROM Crime
+GROUP BY Year;
+
+--Neighborhood total --
+CREATE table neighborhood AS
+SELECT neighborhood,
+COUNT (OffenseCount) AS "Total Offense cases"
+FROM Crime
+GROUP BY neighborhood
+ORDER BY count(OffenseCount) DESC
+LIMIT 5; 
