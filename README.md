@@ -107,7 +107,7 @@ We utilized SQLAlchemy and Flask to create API routes in JSON format for each ch
 *  https://github.com/mapshakers/leaflet-mapkey-icon
 *  https://github.com/Leaflet/Leaflet.markercluster
 
-### Line Chart
+### Line Charts
 ![linechart](https://github.com/jnliou/project3/assets/131678606/87d3b79c-15c8-4dc5-95af-298a15d949ed)
 
 
@@ -117,11 +117,17 @@ In the dataset we used for this project, we were looking at 3 major categories o
 * Each category is then split into various sub-categories, the chart allows the user to see not only the overall trends for a particular category but also the number of offenses that occurrred in each category.
 * We used Chart.js to plot.
 
+![total](data/linecharttotal.PNG)
+
+* We also created another line chart using Chart.js depicting the relationship between the total offense cases from 2019 to 2023, this gave us a better picture of whether the crime rates have increased or decreased over the last 5 years. 
+
 Analysis of Trends: 
 
 * The data was broadly split into three categories in terms of who these crimes were committed against – Person, Property and Society.
 * It was quite interesting to note that the besides Property the other categories had a downward trend in terms of offenses that were being committed.
 * All offenses under Property had a constant rise, larceny being the highest.
+* There is an overall increase of about 24%  in crime from 2019 (46960 reports) to 2022 (58164 reports). 
+
   
 ### Pie Chart and Tables
 ![pie](data/piechart.png)
@@ -153,7 +159,8 @@ Analysis of Trends:
 
 ##### Presentation
 
-* Presentation of Crime Analysis found here: https://docs.google.com/presentation/d/1Xkok__gCio5lIMTB3KzMKNfvRM9XmUvSeEJECOl197k/edit#slide=id.g276564ff1ea_0_0 
+* Presentation of Crime Analysis on [Google Slides](https://docs.google.com/presentation/d/1Xkok__gCio5lIMTB3KzMKNfvRM9XmUvSeEJECOl197k/edit#slide=id.g276564ff1ea_0_0) 
+* [PDF of Presentation](<Crime Analysis 2019-2023 Presentation.pdf>)
 
 
 
