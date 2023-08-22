@@ -1,6 +1,5 @@
+let dataURL = "http://127.0.0.1:5000/pie";
 
-    let dataURL = "http://127.0.0.1:5000/pie"
- 
 // Pie Chart 
 // Fetch JSON data from the file
 d3.json(dataURL).then(function(jsonData) {
@@ -61,69 +60,72 @@ d3.json(dataURL).then(function(jsonData) {
     updateChart();
   });
 
-  //Pivot table
- // Fetch JSON data from the Flask API
- //Create title for pivot table 
- const pivotTable = d3.select("#pivot-table")
-  .append("table")
-  .attr("class", "pivot-table")
-  .text("Time of Day and Count of Top 8 Offenses"); // Set the text for the title
+// Pivot table
+d3.json(dataURL).then(function(jsonData) {
+  const neighborhoods = [...new Set(jsonData.map(d => d.neighbourhood))];
+  const timePeriods = ["Morning", "Afternoon", "Evening", "Night"];
+  const timePeriodDescriptions = {
+    "Morning": "Morning (0500-1200)",
+    "Afternoon": "Afternoon (1200-1700)",
+    "Evening": "Evening (1700-2100)",
+    "Night": "Night (2100-0500)"
+  };
 
- fetch(dataURL)
- .then(response => response.json())
- .then(jsonData => {
-   const neighborhoods = [...new Set(jsonData.map(d => d.neighbourhood))];
-   const timePeriods = ["Morning", "Afternoon", "Evening", "Night"];
+  const neighborhoodSelect = d3
+      .select("#neighborhood2")
+      .on("change", updatePivotTable);
 
-   const neighborhoodSelect = d3.select("body")
-     .append("select")
-     .attr("id", "neighborhood-select")
-     .on("change", updatePivotTable);
+  neighborhoodSelect.selectAll("option")
+      .data(neighborhoods)
+      .enter()
+      .append("option")
+      .text(d => d);
 
-   neighborhoodSelect.selectAll("option")
-     .data(neighborhoods)
-     .enter()
-     .append("option")
-     .text(d => d);
+  const pivotTable = d3.select("#pivot-table")
+      .append("table")
+      .attr("class", "pivot-table");
 
-   const pivotTable = d3.select("#pivot-table")
-     .append("table")
-     .attr("class", "pivot-table");
+  function updatePivotTable() {
+      const selectedNeighborhood = neighborhoodSelect.node().value;
+      const filteredData = jsonData.filter(d => d.neighbourhood === selectedNeighborhood);
 
-   function updatePivotTable() {
-     const selectedNeighborhood = neighborhoodSelect.node().value;
-     const filteredData = jsonData.filter(d => d.neighbourhood === selectedNeighborhood);
+      const pivotData = {};
 
-     const pivotData = {};
+      // Initialize pivot data
+      timePeriods.forEach(timePeriod => {
+          pivotData[timePeriod] = { count: 0, percentage: 0 };
+      });
 
-     // Initialize pivot data
-     timePeriods.forEach(timePeriod => {
-       pivotData[timePeriod] = 0;
-     });
+      // Calculate total offenses and percentage for each time period
+      filteredData.forEach(d => {
+          pivotData[d.period].count += d.count;
+      });
 
-     // Calculate total offenses for each time period
-     filteredData.forEach(d => {
-       pivotData[d.period] += d.count;
-     });
+      const totalCrimeCount = filteredData.reduce((sum, d) => sum + d.count, 0);
 
-     // Remove existing table content
-     pivotTable.selectAll("*").remove();
+      timePeriods.forEach(timePeriod => {
+          pivotData[timePeriod].percentage = ((pivotData[timePeriod].count / totalCrimeCount) * 100).toFixed(2) + "%";
+      });
 
-     // Create table header row
-     const tableHeader = pivotTable.append("tr");
-     tableHeader.append("th").text("Time Period");
-     tableHeader.append("th").text("Total Offenses");
+      // Remove existing table content
+      pivotTable.selectAll("*").remove();
 
-     // Create table rows
-     timePeriods.forEach(timePeriod => {
-       const tableRow = pivotTable.append("tr");
-       tableRow.append("td").text(timePeriod);
-       tableRow.append("td").text(pivotData[timePeriod]);
-     });
-   }
+      // Create table header row
+      const tableHeader = pivotTable.append("tr");
+      tableHeader.append("th").text("Time Period");
+      tableHeader.append("th").text("Total Offenses");
+      tableHeader.append("th").text("Percentage");
 
-   // Call the update function to initialize the pivot table
-   updatePivotTable();
- })
- .catch(error => console.error("Error fetching data:", error));
- 
+      // Create table rows
+      timePeriods.forEach(timePeriod => {
+          const tableRow = pivotTable.append("tr");
+          tableRow.append("td").text(timePeriodDescriptions[timePeriod]);
+          tableRow.append("td").text(pivotData[timePeriod].count);
+          tableRow.append("td").text(pivotData[timePeriod].percentage);
+      });
+  }
+
+  // Call the update function to initialize the pivot table
+  updatePivotTable();
+})
+.catch(error => console.error("Error fetching data:", error));

@@ -40,9 +40,34 @@ The primary aim of the project is to analyze data and derive insights into the t
 ### Data Cleaning CSV files for Analysis: 
 * [CSV file used for analysis](<data/updated-Datafile-Crime3 (Final).zip>)
 
-* The crime data obtained from the Portland Police Bureau frm 2019 to 2023 was merged and cleaned on Python. We removed columns that we did not need, eg. address, open data x, open data y, and we removed all null values.
-* The merged data was then saved as a CSV file, and we utilized SQL to query and analyze the data to determine the significant findings. 
-* We imported the CSV file onto SQLite to do further perform queries and create specific tables for analysis and data visualizations. We created 4 tables which included: a table for a pie chart, stacked bar chart, line chart, and map. 
+Data cleaning and wrangling were fundamental steps in preparing raw data for meaningful analysis. For the challenge 3, our group selected crime data from Portland Oregon police website and the process of cleaning and wrangling five-year data files from 2019 to 2023 was done.
+
+**Step 1: Data Collection and Assessment**
+We Begin by gathering the data files for each year from 2019 to 2023. Assess the format, structure, and quality of the data. Ensure that the data files have consistent column names, data types, and formats.
+
+**Step 2: Data Loading and Inspection**
+
+We used Python to load and inspect the data. Import necessary libraries such as Pandas, numpy and matplotlib and read the data files into one Data Frame.
+
+**Step 3: Data Cleaning**
+Once all the five excel files were merged into one dataframe, Data cleaning involved identifying and addressing issues such as missing values, duplicates, and inconsistencies. We applied the following cleaning techniques:
+•	Handle Missing Values.
+•	Remove Duplicates number of crime cases.
+•	Standardize Column Names
+•	Dropping unwanted columns such as Address, Lat X, Lat Y and Offense Type.
+
+**Step 4: Data Transformation**
+After cleaning, we transformed the data to make it suitable for our analysis and visualization purpose. This involved the following:
+•	Converting data types such as Date format into H:M:S from timestamp, 
+•	Creating new column of Year from crime date reported, another column for Day categorization into Morning, Afternoon, Evening and Night from time column data., and aggregating information.
+
+**Step 5: Data Integration**
+Once we had consistent structures of data, we integrated it into a single DataFrame.
+
+**Step 6: Data Export**
+
+•	After cleaning and transforming the data, we exported it to a CSV file, JSON for further analysis into PostgreSQL.
+•	Finally, we imported the CSV file onto SQLite to do further perform queries and create specific tables for analysis and data visualizations. We created 4 tables which included: a table for a pie chart, stacked bar chart, line chart, and map. 
 
 ## FLASK 
 
@@ -63,6 +88,8 @@ We utilized SQLAlchemy and Flask to create API routes in JSON format for each ch
 *  We use logic.js to plot
 
 ### Line Chart
+![linechart](https://github.com/jnliou/project3/assets/131678606/87d3b79c-15c8-4dc5-95af-298a15d949ed)
+
 
 In the dataset we used for this project, we were looking at 3 major categories of crime and who they were committed against - Person, Property and Society. 
 * This visualization, helps the user understand the trends that can be observed over the last 5 years in these 3 major categories.

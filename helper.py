@@ -60,6 +60,33 @@ def line_chart():
 
     return data_list
 
+def single_chart():
+    engine = db.create_engine("sqlite:///project3.db")
+    print(engine)
+
+    conn = engine.connect()
+
+    metadata = db.MetaData()  # extracting the metadata
+    data = db.Table('line', metadata, autoload_with=engine)  # Table object
+    print(data.columns)
+
+    query = data.select()  # SELECT * FROM divisions
+
+    exe = conn.execute(query)  # executing the query
+    result = exe.fetchall()
+
+    data_list = []
+
+    for record in result:
+        data_dict = {
+            'year': record[0],
+            'crimeagainst': record[1],
+            'total_offense': record[2],
+        }
+        data_list.append(data_dict)
+
+    return data_list
+
 
 def map_chart():
     engine = db.create_engine("sqlite:///project3.db")
