@@ -94,7 +94,15 @@ We utilized SQLAlchemy and Flask to create API routes in JSON format for each ch
 * /api/v1.0/total
 * /api/v1.0/neighborhood
 
+* Codes found here for helping to run Flask: [helper.py](helper.py)
+* To run Flask: [app.py](app.py)
+* SQLite Database: [project3.db](project3.db)
+* Queries on SQLite to create tables: [SQLite-query](sqlite-query)
+
 ## Data Analysis 
+
+* Code found here to run the dashboard: [index.html](index.html)
+![Dashboard](data/dashboard.PNG)
 
 ### Mapping
 ![image](https://github.com/jnliou/project3/assets/15763802/36e0ba43-4540-49dd-9b4b-8a676b6f45c8)
@@ -106,6 +114,8 @@ We utilized SQLAlchemy and Flask to create API routes in JSON format for each ch
 *  Here is a link to the addons :
 *  https://github.com/mapshakers/leaflet-mapkey-icon
 *  https://github.com/Leaflet/Leaflet.markercluster
+
+ Code: [logic.js](static/js/logic.js)
 
 ### Line Charts
 ![linechart](https://github.com/jnliou/project3/assets/131678606/87d3b79c-15c8-4dc5-95af-298a15d949ed)
@@ -128,6 +138,8 @@ Analysis of Trends:
 * All offenses under Property had a constant rise, larceny being the highest.
 * There is an overall increase of about 24%  in crime from 2019 (46960 reports) to 2022 (58164 reports). 
 
+Code: [Offense Category Line Chart](static/js/linechart.js) and [Total Offenses Line Chart](static/js/totalchart.js)
+
   
 ### Pie Chart and Tables
 ![pie](data/piechart.png)
@@ -145,11 +157,11 @@ Analysis of Trends:
 * Time Period: Based on the top 3 neighborhoods with the most crime, larceny is most likely to occur during the afternoon and evenings.
 * More crimes occurred at night in Downtown and Northwest, but more crimes occurred in the afternoon in Hazelwood.
 
+Code: [Pie Chart and Time Period Table](static/js/pie.js) and [Neighborhood Table](static/js/neighborhood.js)
 ### Bar Chart 
 Bar Chart presents an analysis of crime trends over the past five years, focusing on top five major categories: larceny, vandalism, motor theft, burglary, and Assualt offences. We used a bar chart to visualize these trends and understand how these crime categories have evolved over time.There is drop down menu for the top five crime categories, the x-axis represents the years, and the y-axis represents the number of reported incidents for each crime category.
 
 ![Barchart](https://github.com/jnliou/project3/assets/131497346/ad268db2-eacf-4262-a6f9-f0e53d147d7e)
-
 
 Analysis of Trends:
 
@@ -157,6 +169,7 @@ Analysis of Trends:
 * Over the next few years, larceny consistently maintained its lead as the most reported crime category.
 * Vandalism and motor theft, while also showing fluctuations, remained consistently lower in comparison to larceny.
 
+Code: [Bar Chart of Offense Categories](static/js/bar.js)
 ##### Presentation
 
 * Presentation of Crime Analysis on [Google Slides](https://docs.google.com/presentation/d/1Xkok__gCio5lIMTB3KzMKNfvRM9XmUvSeEJECOl197k/edit#slide=id.g276564ff1ea_0_0) 
